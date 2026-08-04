@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Durban Knife Sharpening — Westville, Durban</title>
+<meta name="description" content="Professional whetstone knife sharpening in Westville, Durban. Collection every Monday, delivery every Thursday. Book on WhatsApp.">
+
+<!-- Social sharing preview. Replace the path below with the full https:// URL once this
+     is hosted on a real domain — WhatsApp, Facebook and iMessage will not fetch a relative
+     path, they need an absolute one, e.g. https://durbanknifesharpening.co.za/durban-knife-sharpening-social-share.png -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Durban Knife Sharpening — Westville, Durban">
+<meta property="og:description" content="A sharp knife is a safe knife. Whetstone sharpening for chefs, home cooks & hunters. Book on WhatsApp.">
+<meta property="og:image" content="durban-knife-sharpening-social-share.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Durban Knife Sharpening — Westville, Durban">
+<meta name="twitter:description" content="A sharp knife is a safe knife. Whetstone sharpening for chefs, home cooks & hunters.">
+<meta name="twitter:image" content="durban-knife-sharpening-social-share.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@600;700;800;900&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --steel-dark:#14161a;
+    --steel-panel:#1c1f24;
+    --steel-line:#2c3036;
+    --stone:#c9a876;
+    --stone-soft:#8f7955;
+    --spark:#f2c14e;
+    --ink:#edeae3;
+    --ink-muted:#a9b4bb;
+    --radius-soft:2px;
+    --edge-cut:12px;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+
+  body{
+    margin:0;
+    background:var(--steel-dark);
+    color:var(--ink);
+    font-family:'IBM Plex Sans', sans-serif;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  /* ---------- background knife texture ----------
+     A fixed, tiled layer of faint knife silhouettes sitting behind every
+     section. Baked as an inline SVG (not a photo) so it stays crisp at any
+     size and costs nothing to load. Fixed positioning keeps it stationary
+     as the page scrolls, like a watermark on the steel itself. Opacity is
+     set inside the SVG fill (not via CSS opacity) so it never competes
+     with text contrast. */
+  body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    z-index:0;
+    pointer-events:none;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='900' height='900' viewBox='0 0 900 900'%3E%3Cdefs%3E%3Cpath id='k' d='M-80,-14 L-80,14 L-10,14 L-10,-14 Z M-10,-14 L150,-13 Q195,-12 216,0 Q195,12 150,13 L-10,14 Z' fill='rgba(255,255,255,0.05)'/%3E%3C/defs%3E%3Cuse href='%23k' transform='translate(140,170) rotate(-20) scale(1.05)'/%3E%3Cuse href='%23k' transform='translate(700,260) rotate(140) scale(0.55)'/%3E%3Cuse href='%23k' transform='translate(260,640) rotate(-95) scale(0.6)'/%3E%3Cuse href='%23k' transform='translate(680,720) rotate(30) scale(0.75)'/%3E%3C/svg%3E");
+    background-repeat:repeat;
+    background-size:900px 900px;
+  }
+
+  body > section,
+  body > footer{
+    position:relative;
+    z-index:1;
+  }
+
+  h1,h2,h3{
+    font-family:'Big Shoulders Display', sans-serif;
+    text-transform:uppercase;
+    letter-spacing:0.01em;
+    margin:0;
+    line-height:0.95;
+  }
+
+  .mono{
+    font-family:'IBM Plex Mono', monospace;
+  }
+
+  a{color:inherit;}
+
+  :focus-visible{
+    outline:2px solid var(--spark);
+    outline-offset:3px;
+  }
+
+  /* ---------- layout shells ---------- */
+
+  .wrap{
+    max-width:760px;
+    margin:0 auto;
+    padding:0 24px;
+  }
+
+  section{
+    padding:88px 0;
+    text-align:center;
+    border-bottom:1px solid var(--steel-line);
+  }
+
+  section:last-of-type{border-bottom:none;}
+
+  .eyebrow{
+    display:inline-block;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    letter-spacing:0.22em;
+    text-transform:uppercase;
+    color:var(--stone);
+    margin-bottom:18px;
+  }
+
+  /* ---------- hero ---------- */
+
+  .hero{
+    padding:120px 0 96px;
+    position:relative;
+    border-bottom:1px solid var(--steel-line);
+  }
+
+  .hero h1{
+    font-size:clamp(38px, 8vw, 74px);
+    font-weight:800;
+    color:var(--ink);
+  }
+
+  .hero h1 span{color:var(--spark);}
+
+  .hero p.lede{
+    max-width:520px;
+    margin:26px auto 0;
+    color:var(--ink-muted);
+    font-size:17px;
+  }
+
+  .glint{
+    width:min(420px, 70%);
+    height:2px;
+    margin:40px auto 0;
+    background:linear-gradient(90deg, transparent, var(--spark), transparent);
+    position:relative;
+    overflow:hidden;
+  }
+
+  .glint::after{
+    content:"";
+    position:absolute;
+    top:0; left:-60%;
+    width:60%; height:100%;
+    background:linear-gradient(90deg, transparent, #fff, transparent);
+    animation:sweep 2.6s ease-in-out 0.4s 1;
+  }
+
+  @keyframes sweep{
+    to{ left:120%; }
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    .glint::after{animation:none;}
+    html{scroll-behavior:auto;}
+  }
+
+  /* ---------- buttons (bevelled, referencing the whetstone angle) ---------- */
+
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    gap:10px;
+    margin-top:36px;
+    padding:16px 30px;
+    background:var(--spark);
+    color:var(--steel-dark);
+    font-family:'IBM Plex Mono', monospace;
+    font-weight:600;
+    font-size:14px;
+    letter-spacing:0.04em;
+    text-transform:uppercase;
+    text-decoration:none;
+    border:none;
+    cursor:pointer;
+    clip-path:polygon(
+      var(--edge-cut) 0, 100% 0, 100% calc(100% - var(--edge-cut)),
+      calc(100% - var(--edge-cut)) 100%, 0 100%, 0 var(--edge-cut)
+    );
+    transition:transform 0.15s ease, background 0.15s ease;
+  }
+
+  .btn:hover{background:#ffd670; transform:translateY(-2px);}
+  .btn:active{transform:translateY(0);}
+
+  .btn svg{width:18px;height:18px;flex-shrink:0;}
+
+  .btn.ghost{
+    background:transparent;
+    color:var(--ink);
+    border:1px solid var(--steel-line);
+    clip-path:none;
+    border-radius:var(--radius-soft);
+  }
+  .btn.ghost:hover{border-color:var(--stone); background:var(--steel-panel);}
+
+  /* ---------- section headings ---------- */
+
+  h2{
+    font-size:clamp(28px, 5vw, 40px);
+    font-weight:700;
+    color:var(--ink);
+    margin-bottom:14px;
+  }
+
+  .section-intro{
+    max-width:520px;
+    margin:0 auto 48px;
+    color:var(--ink-muted);
+    font-size:16px;
+  }
+
+  /* ---------- why cards ---------- */
+
+  .grid-3{
+    display:grid;
+    grid-template-columns:1fr;
+    gap:28px;
+    margin-top:8px;
+  }
+
+  @media (min-width:760px){
+    .grid-3{grid-template-columns:repeat(3, 1fr);}
+  }
+
+  .card{
+    background:var(--steel-panel);
+    border:1px solid var(--steel-line);
+    padding:32px 24px;
+    text-align:center;
+  }
+
+  .card-icon{
+    width:40px; height:40px;
+    margin:0 auto 18px;
+    color:var(--stone);
+  }
+
+  .card h3{
+    font-size:21px;
+    font-weight:700;
+    margin-bottom:10px;
+    color:var(--ink);
+  }
+
+  .card p{
+    color:var(--ink-muted);
+    font-size:15px;
+    margin:0;
+  }
+
+  /* ---------- pricing ---------- */
+
+  .price-list{
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+    margin-top:8px;
+  }
+
+  .price-card{
+    background:var(--steel-panel);
+    border:1px solid var(--steel-line);
+    padding:30px 28px;
+    text-align:center;
+    position:relative;
+  }
+
+  .price-card.featured{border-color:var(--stone);}
+
+  .price-tag{
+    display:inline-block;
+    font-family:'IBM Plex Mono', monospace;
+    font-size:12px;
+    letter-spacing:0.15em;
+    text-transform:uppercase;
+    color:var(--steel-dark);
+    background:var(--stone);
+    padding:4px 10px;
+    margin-bottom:14px;
+  }
+
+  .price-card h3{
+    font-size:24px;
+    font-weight:700;
+    color:var(--ink);
+    margin-bottom:6px;
+  }
+
+  .price-card .desc{
+    color:var(--ink-muted);
+    font-size:14px;
+    margin-bottom:16px;
+  }
+
+  .price-amount{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:36px;
+    font-weight:600;
+    color:var(--spark);
+  }
+
+  .price-amount sup{
+    font-size:16px;
+    color:var(--ink-muted);
+    font-weight:400;
+    margin-left:4px;
+  }
+
+  /* ---------- steps ---------- */
+
+  .steps{
+    display:flex;
+    flex-direction:column;
+    gap:0;
+    max-width:480px;
+    margin:0 auto;
+    text-align:left;
+  }
+
+  .step{
+    display:flex;
+    gap:20px;
+    padding:22px 0;
+    border-bottom:1px solid var(--steel-line);
+    align-items:flex-start;
+  }
+
+  .step:last-child{border-bottom:none;}
+
+  .step-num{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:14px;
+    color:var(--steel-dark);
+    background:var(--stone);
+    width:30px; height:30px;
+    flex-shrink:0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:600;
+  }
+
+  .step-body h3{
+    font-size:17px;
+    font-weight:600;
+    text-transform:none;
+    font-family:'IBM Plex Sans', sans-serif;
+    letter-spacing:0;
+    color:var(--ink);
+    margin-bottom:4px;
+  }
+
+  .step-body p{
+    color:var(--ink-muted);
+    font-size:14px;
+    margin:0;
+  }
+
+  /* ---------- coverage ---------- */
+
+  .fee-table{
+    max-width:460px;
+    margin:0 auto;
+    border:1px solid var(--steel-line);
+  }
+
+  .fee-row{
+    display:flex;
+    justify-content:space-between;
+    padding:16px 22px;
+    border-bottom:1px solid var(--steel-line);
+    font-size:15px;
+  }
+
+  .fee-row:last-child{border-bottom:none;}
+
+  .fee-row .amount{
+    font-family:'IBM Plex Mono', monospace;
+    color:var(--spark);
+  }
+
+  .free-note{
+    margin-top:18px;
+    font-size:14px;
+    color:var(--stone);
+  }
+
+  .areas{
+    margin-top:26px;
+    font-size:14px;
+    color:var(--ink-muted);
+  }
+
+  /* ---------- workshop ---------- */
+
+  .addr{
+    font-size:18px;
+    color:var(--ink);
+    margin-bottom:8px;
+  }
+
+  .route-note{
+    max-width:440px;
+    margin:14px auto 0;
+    font-size:13px;
+    color:var(--ink-muted);
+    font-style:italic;
+  }
+
+  /* ---------- social / follow ---------- */
+
+  .social-row{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:16px;
+    margin-top:12px;
+  }
+
+  @media (min-width:560px){
+    .social-row{flex-direction:row; justify-content:center;}
+  }
+
+  .social-row .btn{margin-top:0;}
+  .social-row .btn svg{width:18px;height:18px;}
+
+  /* ---------- footer ---------- */
+
+  footer{
+    padding:80px 0 60px;
+    text-align:center;
+  }
+
+  footer .contact-line{
+    margin-top:22px;
+    color:var(--ink-muted);
+    font-family:'IBM Plex Mono', monospace;
+    font-size:14px;
+  }
+
+  footer .contact-line a{
+    text-decoration:none;
+    border-bottom:1px solid var(--steel-line);
+  }
+
+  footer .fine{
+    margin-top:40px;
+    font-size:12px;
+    color:#565d64;
+  }
+</style>
+</head>
+<body>
+
+<section class="hero">
+  <div class="wrap">
+    <span class="eyebrow">Westville · Durban — mobile collection</span>
+    <h1>A sharp knife<br>is a <span>safe</span> knife</h1>
+    <p class="lede">Precision whetstone sharpening for chefs, home cooks, anglers and hunters. WhatsApp a photo, we collect Monday and deliver Thursday.</p>
+    <div class="glint" aria-hidden="true"></div>
+    <a class="btn" href="https://wa.me/27815135700?text=Hi%20Sayon,%20I%20would%20like%20to%20book%20a%20knife%20sharpening%20slot." target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.2h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.86 9.86 0 0 0 12.04 2zm5.8 14.13c-.24.68-1.4 1.3-1.93 1.38-.5.08-1.13.11-1.82-.11-.42-.13-.96-.31-1.65-.6-2.9-1.25-4.79-4.17-4.94-4.36-.14-.2-1.18-1.57-1.18-3 0-1.42.75-2.12 1.01-2.41.27-.29.58-.36.78-.36.2 0 .39 0 .56.01.18.01.42-.07.66.5.24.58.82 2 .9 2.14.07.15.12.32.02.52-.1.2-.15.32-.3.5-.15.18-.31.4-.44.53-.15.15-.3.31-.13.6.17.29.76 1.25 1.63 2.02 1.12 1 2.06 1.31 2.35 1.46.3.15.47.13.64-.08.18-.2.75-.87.95-1.17.2-.3.4-.24.66-.15.27.1 1.7.8 1.99.95.3.15.49.22.56.35.08.13.08.75-.16 1.44z"/></svg>
+      Book on WhatsApp
+    </a>
+  </div>
+</section>
+
+<section id="why">
+  <div class="wrap">
+    <span class="eyebrow">The case for sharpening</span>
+    <h2>Why bother sharpening?</h2>
+    <p class="section-intro">A blunt edge is more dangerous, more wasteful and more expensive than a sharp one. Here's the actual reasoning.</p>
+    <div class="grid-3">
+      <div class="card">
+        <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 20L18 6M18 6h-5M18 6v5"/></svg>
+        <h3>Force, not finesse</h3>
+        <p>A dull blade needs pressure to cut. Pressure is what slips — and a slipping blade is how most kitchen injuries happen. A sharp edge does the work for you, with far less force behind it.</p>
+      </div>
+      <div class="card">
+        <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 12h18M3 12l4-4M3 12l4 4"/></svg>
+        <h3>Clean cuts, better food</h3>
+        <p>A honed edge slices through fibres instead of crushing them. Vegetables stay crisp, meat holds its texture, and fish fillets come apart clean instead of tearing.</p>
+      </div>
+      <div class="card">
+        <svg class="card-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 3"/></svg>
+        <h3>Cheaper than a new knife</h3>
+        <p>A decent knife costs upwards of R1,500. Keeping its edge costs a fraction of that every few months — for years more use out of the same blade.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="wrap">
+    <span class="eyebrow">Pricing</span>
+    <h2>Services</h2>
+    <p class="section-intro">Hand-finished on whetstones and diamond plates. Every price is per visit, collected and delivered to your door.</p>
+    <div class="price-list">
+
+      <div class="price-card">
+        <h3>Standard Kitchen</h3>
+        <p class="desc">Chef, utility &amp; paring knives</p>
+        <div class="price-amount">R60</div>
+        <div>
+          <a class="btn" href="https://wa.me/27815135700?text=Hi%20Sayon,%20I%20would%20like%20to%20book%20the%20Standard%20Kitchen%20sharpening%20%28R60%29." target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.2h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.86 9.86 0 0 0 12.04 2zm5.8 14.13c-.24.68-1.4 1.3-1.93 1.38-.5.08-1.13.11-1.82-.11-.42-.13-.96-.31-1.65-.6-2.9-1.25-4.79-4.17-4.94-4.36-.14-.2-1.18-1.57-1.18-3 0-1.42.75-2.12 1.01-2.41.27-.29.58-.36.78-.36.2 0 .39 0 .56.01.18.01.42-.07.66.5.24.58.82 2 .9 2.14.07.15.12.32.02.52-.1.2-.15.32-.3.5-.15.18-.31.4-.44.53-.15.15-.3.31-.13.6.17.29.76 1.25 1.63 2.02 1.12 1 2.06 1.31 2.35 1.46.3.15.47.13.64-.08.18-.2.75-.87.95-1.17.2-.3.4-.24.66-.15.27.1 1.7.8 1.99.95.3.15.49.22.56.35.08.13.08.75-.16 1.44z"/></svg>
+            Book this on WhatsApp
+          </a>
+        </div>
+      </div>
+
+      <div class="price-card">
+        <h3>Specialist &amp; Heavy-Duty</h3>
+        <p class="desc">Cleavers, hunting &amp; slaughter blades</p>
+        <div class="price-amount">R100</div>
+        <div>
+          <a class="btn" href="https://wa.me/27815135700?text=Hi%20Sayon,%20I%20would%20like%20to%20book%20Specialist%2FHeavy-Duty%20sharpening%20%28R100%29." target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.2h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.86 9.86 0 0 0 12.04 2zm5.8 14.13c-.24.68-1.4 1.3-1.93 1.38-.5.08-1.13.11-1.82-.11-.42-.13-.96-.31-1.65-.6-2.9-1.25-4.79-4.17-4.94-4.36-.14-.2-1.18-1.57-1.18-3 0-1.42.75-2.12 1.01-2.41.27-.29.58-.36.78-.36.2 0 .39 0 .56.01.18.01.42-.07.66.5.24.58.82 2 .9 2.14.07.15.12.32.02.52-.1.2-.15.32-.3.5-.15.18-.31.4-.44.53-.15.15-.3.31-.13.6.17.29.76 1.25 1.63 2.02 1.12 1 2.06 1.31 2.35 1.46.3.15.47.13.64-.08.18-.2.75-.87.95-1.17.2-.3.4-.24.66-.15.27.1 1.7.8 1.99.95.3.15.49.22.56.35.08.13.08.75-.16 1.44z"/></svg>
+            Book this on WhatsApp
+          </a>
+        </div>
+      </div>
+
+      <div class="price-card featured">
+        <span class="price-tag">Best value</span>
+        <h3>The Excellence Bundle</h3>
+        <p class="desc">1 specialist blade + 3 household knives</p>
+        <div class="price-amount">R250</div>
+        <div>
+          <a class="btn" href="https://wa.me/27815135700?text=Hi%20Sayon,%20I%20would%20like%20to%20book%20the%20Excellence%20Bundle%20%28R250%29." target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.2h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.86 9.86 0 0 0 12.04 2zm5.8 14.13c-.24.68-1.4 1.3-1.93 1.38-.5.08-1.13.11-1.82-.11-.42-.13-.96-.31-1.65-.6-2.9-1.25-4.79-4.17-4.94-4.36-.14-.2-1.18-1.57-1.18-3 0-1.42.75-2.12 1.01-2.41.27-.29.58-.36.78-.36.2 0 .39 0 .56.01.18.01.42-.07.66.5.24.58.82 2 .9 2.14.07.15.12.32.02.52-.1.2-.15.32-.3.5-.15.18-.31.4-.44.53-.15.15-.3.31-.13.6.17.29.76 1.25 1.63 2.02 1.12 1 2.06 1.31 2.35 1.46.3.15.47.13.64-.08.18-.2.75-.87.95-1.17.2-.3.4-.24.66-.15.27.1 1.7.8 1.99.95.3.15.49.22.56.35.08.13.08.75-.16 1.44z"/></svg>
+            Book this on WhatsApp
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section id="how">
+  <div class="wrap">
+    <span class="eyebrow">The process</span>
+    <h2>How collection works</h2>
+    <p class="section-intro">A simple weekly cycle — no need to leave home.</p>
+    <div class="steps">
+      <div class="step">
+        <span class="step-num">1</span>
+        <div class="step-body">
+          <h3>Message your knives</h3>
+          <p>WhatsApp a photo of your blades and your address.</p>
+        </div>
+      </div>
+      <div class="step">
+        <span class="step-num">2</span>
+        <div class="step-body">
+          <h3>We collect — every Monday</h3>
+          <p>Book by Sunday evening to make that week's round.</p>
+        </div>
+      </div>
+      <div class="step">
+        <span class="step-num">3</span>
+        <div class="step-body">
+          <h3>We sharpen</h3>
+          <p>Hand-finished on whetstones and diamond plates at the Westville workshop.</p>
+        </div>
+      </div>
+      <div class="step">
+        <span class="step-num">4</span>
+        <div class="step-body">
+          <h3>We deliver — every Thursday</h3>
+          <p>Back at your door, ready to use.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="coverage">
+  <div class="wrap">
+    <span class="eyebrow">Coverage</span>
+    <h2>Delivery fees</h2>
+    <div class="fee-table">
+      <div class="fee-row"><span>Westville Central (0–5km)</span><span class="amount">R80</span></div>
+      <div class="fee-row"><span>Overport / Berea West (5–10km)</span><span class="amount">R150</span></div>
+    </div>
+    <p class="free-note">Free delivery on all orders over R600 (within 10km)</p>
+    <p class="areas">Also serving Chatsworth, Glenwood, Hillcrest &amp; surrounding areas — ask on WhatsApp if you're not sure your area qualifies.</p>
+  </div>
+</section>
+
+<section id="workshop">
+  <div class="wrap">
+    <span class="eyebrow">Workshop</span>
+    <h2>Based in Westville</h2>
+    <p class="addr">3 Mersey Road, Westville, Durban, 3629</p>
+    <p class="route-note">Note: the Bristol Road bridge is currently closed. Use the Rockdale Road off-ramp from King Cetshwayo Highway.</p>
+  </div>
+</section>
+
+<section id="follow">
+  <div class="wrap">
+    <span class="eyebrow">On the bench this week</span>
+    <h2>View our work</h2>
+    <p class="section-intro">Before-and-afters, restorations and the odd chip repair — posted as it happens.</p>
+    <div class="social-row">
+      <a class="btn ghost" href="https://www.facebook.com/share/1BkQuE3gJv/?mibextid=wwXIfr" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06c0 5 3.66 9.15 8.44 9.94v-7.03H7.9v-2.9h2.54V9.85c0-2.51 1.49-3.9 3.77-3.9 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.77-1.63 1.56v1.88h2.78l-.44 2.9h-2.34V22c4.78-.79 8.44-4.94 8.44-9.94z"/></svg>
+        View our work on Facebook
+      </a>
+      <a class="btn ghost" href="https://www.instagram.com/durbanknifesharpening?igsh=MTRwemRuMTl1c2NkZg==" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2c2.72 0 3.06.01 4.12.06 1.06.05 1.79.22 2.43.47.66.26 1.21.6 1.76 1.15.55.55.9 1.1 1.15 1.76.25.64.42 1.37.47 2.43.05 1.06.06 1.4.06 4.12s-.01 3.06-.06 4.12c-.05 1.06-.22 1.79-.47 2.43a4.9 4.9 0 0 1-1.15 1.76 4.9 4.9 0 0 1-1.76 1.15c-.64.25-1.37.42-2.43.47-1.06.05-1.4.06-4.12.06s-3.06-.01-4.12-.06c-1.06-.05-1.79-.22-2.43-.47a4.9 4.9 0 0 1-1.76-1.15 4.9 4.9 0 0 1-1.15-1.76c-.25-.64-.42-1.37-.47-2.43C2.01 15.06 2 14.72 2 12s.01-3.06.06-4.12c.05-1.06.22-1.79.47-2.43.26-.66.6-1.21 1.15-1.76A4.9 4.9 0 0 1 5.44 2.5c.64-.25 1.37-.42 2.43-.47C8.94 2.01 9.28 2 12 2zm0 1.8c-2.67 0-2.99.01-4.04.06-.87.04-1.34.18-1.65.3-.42.16-.71.36-1.02.67-.31.31-.5.6-.67 1.02-.12.31-.26.78-.3 1.65-.05 1.05-.06 1.37-.06 4.04s.01 2.99.06 4.04c.04.87.18 1.34.3 1.65.16.42.36.71.67 1.02.31.31.6.5 1.02.67.31.12.78.26 1.65.3 1.05.05 1.37.06 4.04.06s2.99-.01 4.04-.06c.87-.04 1.34-.18 1.65-.3.42-.16.71-.36 1.02-.67.31-.31.5-.6.67-1.02.12-.31.26-.78.3-1.65.05-1.05.06-1.37.06-4.04s-.01-2.99-.06-4.04c-.04-.87-.18-1.34-.3-1.65-.16-.42-.36-.71-.67-1.02a2.7 2.7 0 0 0-1.02-.67c-.31-.12-.78-.26-1.65-.3-1.05-.05-1.37-.06-4.04-.06zm0 3.3a4.9 4.9 0 1 1 0 9.8 4.9 4.9 0 0 1 0-9.8zm0 1.8a3.1 3.1 0 1 0 0 6.2 3.1 3.1 0 0 0 0-6.2zm5.1-2a1.15 1.15 0 1 1 0 2.3 1.15 1.15 0 0 1 0-2.3z"/></svg>
+        View our work on Instagram
+      </a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span class="eyebrow">Ready when you are</span>
+    <h2>Book your slot</h2>
+    <a class="btn" href="https://wa.me/27815135700?text=Hi%20Sayon,%20I%20would%20like%20to%20book%20a%20knife%20sharpening%20slot." target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.2h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.86 9.86 0 0 0 12.04 2zm5.8 14.13c-.24.68-1.4 1.3-1.93 1.38-.5.08-1.13.11-1.82-.11-.42-.13-.96-.31-1.65-.6-2.9-1.25-4.79-4.17-4.94-4.36-.14-.2-1.18-1.57-1.18-3 0-1.42.75-2.12 1.01-2.41.27-.29.58-.36.78-.36.2 0 .39 0 .56.01.18.01.42-.07.66.5.24.58.82 2 .9 2.14.07.15.12.32.02.52-.1.2-.15.32-.3.5-.15.18-.31.4-.44.53-.15.15-.3.31-.13.6.17.29.76 1.25 1.63 2.02 1.12 1 2.06 1.31 2.35 1.46.3.15.47.13.64-.08.18-.2.75-.87.95-1.17.2-.3.4-.24.66-.15.27.1 1.7.8 1.99.95.3.15.49.22.56.35.08.13.08.75-.16 1.44z"/></svg>
+      Message Sayon on WhatsApp
+    </a>
+    <div class="contact-line">
+      <a href="tel:+27815135700">081 513 5700</a> &nbsp;·&nbsp; <a href="mailto:durbanknifesharpening@gmail.com">durbanknifesharpening@gmail.com</a>
+    </div>
+    <p class="fine">Durban Knife Sharpening — Westville, Durban.</p>
+  </div>
+</footer>
+
+</body>
+</html>
